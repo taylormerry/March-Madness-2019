@@ -22,22 +22,23 @@ ranking_data.csv was created in TeamDataCleaning.ipynb. It is a dataset of each 
 
 ### ML.ipynb
 
-
+Uses the sklearn framework's implementation of Logistic Regression, Random Forest, and K Nearest Neigbors algorithms to find the best model to predict NCAA tournament games through cross validation. Logistic Regression with L1 regularization, Logistic Regression with L2 regularization, and Random Forest had the lowest average log loss in cross validation, but only Logistic Regression with L1 regularization and Logistic Regression with L2 regularization had the lowest log loss on the testing set. Therefore, I decided to use the average predicted probabilities of the two Logistic Regression models for my submissions.
 
 ### MatchupFeatureEngineering.ipynb
 
+Uses the teamsheets.csv to create features for each tournament matchup to be used for predictions. The predictor variables were created by using each team's data, the difference between each team's data, the absolute value of each team's data, and/or the average of each team's data for each team statistic.
 
 ### Predictions.ipynb
 
-
+Uses code from TeamDataCleaning.ipynb to create the teamsheets data for 2019. Uses code from RatingLinearRegression.ipynb to create the weighted ratings for 2019 teams. Uses code from MatchupFeatureEngineering.ipynb to create the matchup data to be used for predictions. Uses code from ML.ipynb to predict win probabilities for each possible game in the 2019 NCAA tournament using Logistic Regression with L1 regularization and Logistic Regression with L2 regularization and averaging their predictions. Then creates submission1.csv and submission2.csv to be submitted for the Kaggle competition.
 
 ### RatingLinearRegression.ipynb
 
-
+Creates a weighted efficiency rating for each team in each season. Uses ridge regression to determine the weights because  all of the rating metrics should be included and not left out by using forward selection or LASSO regression. The response variable will be the score differential of NCAA tournament games. The X variables will be the difference of each rating metric scaled from 0 to 1 for each year between the two teams. The ratings were scaled in order for interpretability, it is now easy to see which rating system is more important in predicting the score differential of NCAA tournament games. The weighted ratings should be interpreted by the following rule: the difference in the weighted rating of team 1 versus team 2 is the predicted score differential.
 
 ### TeamDataCleaning.ipynb
 
-
+Creates teamsheets.csv, a file for team stats in each season. Cleans the data from multiple sources using pandas and regular expressions.
 
 ### submission1.csv
 
@@ -49,7 +50,7 @@ My predicted probabilities for each game with Oklahoma given a probability of be
 
 ## Viewing This Project
 
-The order in which the python files are to be ran is:
+The order in which you should run the python files is:
 
 1) TeamDataCleaning.ipynb up until needing the weights for the team weighted efficiency rating
 2) RatingLinearRegression.ipynb
@@ -60,4 +61,13 @@ The order in which the python files are to be ran is:
 
 ## Results
 
+My submission2.csv (Oklahoma beat Mississippi) achieved a log loss of 0.45876, which placed me 78th out of 866. The 1st place submission achieved a log loss of 0.41477 and 5th place achieved a log loss of 0.43148.
+
 ## Future Improvements
+
+- Use data from 2002-2007, 2009 seasons, and use an ensemble model to combine different models with different data
+- When using k-fold cross validation, make each fold to be one year's tournament data (i.e. all of 2008's games are fold one, etc.)
+- Find some predictors on consistency, i.e. variance in team stats such as rebounding differential, turnover differential, FT%, eFG%
+- Use strength of schedule as a predictor and possibly use it to weight team stats
+- Find other efficiency metrics that have pre-tournament data
+- Do EDA to determine if relationship of predictor variables to response variable is linear
