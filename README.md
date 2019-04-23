@@ -70,4 +70,5 @@ My submission2.csv (Oklahoma beat Mississippi) achieved a log loss of 0.45876, w
 - Find some predictors on consistency, i.e. variance in team stats such as rebounding differential, turnover differential, FT%, eFG%
 - Use strength of schedule as a predictor and possibly use it to weight team stats
 - Find other efficiency metrics that have pre-tournament data
-- Do EDA to determine if relationship of predictor variables to response variable is linear
+- Do more feature engineering (i.e. using squares, square roots, etc. of all of the features)
+- Refit a Logistic Regression model with L2 penalty after using L1 dimension reduction
