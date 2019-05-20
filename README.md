@@ -1,6 +1,6 @@
 # Predicting Win Probabilities for March Madness Games
 
-I entered this project in a Kaggle Competition found here https://www.kaggle.com/c/mens-machine-learning-competition-2019. My submission ended up finishing in 78th place out of 866 sumissions with a log loss of 0.45876.
+I entered this project in a Kaggle Competition found here https://www.kaggle.com/c/mens-machine-learning-competition-2019. My submission ended up finishing in 78th place out of 866 submissions with a log loss of 0.45876.
 
 ## File Directory
 
