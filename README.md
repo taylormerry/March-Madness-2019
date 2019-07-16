@@ -71,5 +71,5 @@ My submission2.csv (Oklahoma beat Mississippi) achieved a log loss of 0.45876, w
 - Use strength of schedule as a predictor and possibly use it to weight team stats
 - Find other efficiency metrics that have pre-tournament data
 - Do more feature engineering (i.e. using squares, square roots, etc. of all of the features)
-- Refit a Logistic Regression model with L2 penalty after using L1 dimension reduction cross validating for best L1 regularization hyperparameter
+- Refit a Logistic Regression model with L2 penalty after using L1 dimension reduction cross validating for best combination of features
 - Possibly use class weights to balance the dataset before fitting the ML models
