@@ -65,11 +65,7 @@ My submission2.csv (Oklahoma beat Mississippi) achieved a log loss of 0.45876, w
 
 ## Future Improvements
 
-- Use data from 2002-2007, 2009 seasons, and use an ensemble model to combine different models with different data
-- When using k-fold cross validation, make each fold to be one year's tournament data (i.e. all of 2008's games are fold one, etc.)
 - Find some predictors on consistency, i.e. variance in team stats such as rebounding differential, turnover differential, FT%, eFG%
-- Use strength of schedule as a predictor and possibly use it to weight team stats
 - Find other efficiency metrics that have pre-tournament data
-- Do more feature engineering (i.e. using squares, square roots, etc. of all of the features)
+- Do more feature engineering
 - Refit a Logistic Regression model with L2 penalty after using L1 dimension reduction cross validating for best combination of features
-- Possibly use class weights to balance the dataset before fitting the ML models
